@@ -10,9 +10,14 @@ async function getBooks() {
 
 function page(book) {
     let li = document.createElement("li")
+    let input = document.createElement("input")
+    let btn = document.createElement("button")
+
     li.textContent = book.title
+    input.value = book.quantity
+    btn.textContent = "Save"
     
-    root.append(li)
+    root.append(li, input, btn)
 }
 
 getBooks()
