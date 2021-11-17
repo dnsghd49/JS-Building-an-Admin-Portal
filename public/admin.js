@@ -1,6 +1,18 @@
 const books_url = "http://localhost:3001/listBooks"
+const root = document.querySelector("#root")
+
 async function getBooks() {
     let response = await fetch(books_url)
     let data = await response.json()
-    console.log(data)
+    // console.log(data)
+    data.forEach(page)
 }
+
+function page(book) {
+    let li = document.createElement("li")
+    li.textContent = book.title
+    
+    root.append(li)
+}
+
+getBooks()
